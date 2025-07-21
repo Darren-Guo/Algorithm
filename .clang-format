@@ -1,0 +1,48 @@
+# 基于 LLVM 风格扩展，适配多数 C/C++ 项目
+BasedOnStyle: LLVM
+
+# 缩进设置
+IndentWidth: 4               # 缩进宽度为 4 空格
+UseTab: Never                # 不使用制表符，统一用空格
+TabWidth: 4                  # 若使用制表符，宽度为 4（这里仅作兼容）
+IndentCaseLabels: true       # switch 的 case 标签缩进
+IndentGotoLabels: false      # goto 标签不缩进（保持在行首）
+IndentPPDirectives: AfterHash # #include 等预处理指令缩进（在 # 后）
+
+# 换行与对齐
+ColumnLimit: 100             # 行宽限制（超过自动换行）
+AllowShortBlocksOnASingleLine: false # 不允许短代码块（如 {} 内）单行显示
+AllowShortFunctionsOnASingleLine: InlineOnly # 仅允许内联函数单行显示
+AllowShortIfStatementsOnASingleLine: Never # if 语句不允许单行（即使简短）
+BreakBeforeBraces: Custom    # 自定义大括号位置
+BraceWrapping:
+  AfterClass: true           # class 后换行
+  AfterFunction: true        # 函数后换行
+  AfterNamespace: true       # namespace 后换行
+  AfterStruct: true          # struct 后换行
+  AfterUnion: true           # union 后换行
+
+# 空格与对齐
+SpaceBeforeAssignmentOperators: true # 赋值运算符（= += 等）前加空格
+SpaceAfterAssignmentOperators: true  # 赋值运算符后加空格
+SpaceInEmptyParentheses: false       # 空括号内不加空格（如 func()）
+SpacesInParentheses: false           # 括号内不额外加空格（如 func(a, b)）
+SpacesInSquareBrackets: false        # 方括号内不额外加空格（如 arr[0]）
+SpacesInAngles: false                # 尖括号内不额外加空格（如 vector<int>）
+SpaceBeforeParens: ControlStatements # 控制语句（if/for 等）的括号前加空格
+SpaceBeforeCtorInitializerColon: true # 构造函数初始化列表的冒号前加空格
+Cpp11BracedListStyle: true           # C++11 初始化列表风格（如 {1, 2, 3} 对齐）
+
+# 函数与参数
+AlignAfterOpenBracket: Align # 括号内参数对齐（如函数参数多行时对齐到括号）
+BreakConstructorInitializers: BeforeComma # 构造函数初始化列表换行时在逗号前断行
+BreakFunctionDeclarations: true      # 函数声明参数过长时换行
+AllowAllParametersOfDeclarationOnNextLine: true # 允许参数全部换行到下一行
+
+# 其他细节
+PointerAlignment: Left       # 指针符号（*）靠左（如 int* ptr）
+ReferenceAlignment: Left     # 引用符号（&）靠左（如 int& ref）
+SortIncludes: true           # 自动排序 #include（按字母和系统头文件分组）
+SortUsingDeclarations: true   # 自动排序 using 声明
+MaxEmptyLinesToKeep: 1       # 连续空行最多保留 1 行
+KeepEmptyLinesAtTheStartOfBlocks: false # 代码块开头不保留空行

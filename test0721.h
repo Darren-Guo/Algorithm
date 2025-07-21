@@ -1,3 +1,5 @@
+#ifndef test0721_h
+#define test0721_h
 #include <stdc++.h>
 
 using namespace std;
@@ -52,3 +54,5 @@ vector<int> func2(vector<int> nums) {
     
     return vector<int>(nums.begin(), nums.begin() + k);
 }
+
+#endif
